@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+ {% block body %}
+    <h2 class="mt-5">Page Contact</h2>
+                <form method="POST" action="">
+{% if message != "" %}
+                    <div class="alert alert-success">{{ message }}</div>
+{% endif %}          
+{% if error != "" %}
+                    <div class="alert alert-danger">{{ error }}</div>
+{% endif %}          
+                <div class="form-group">
+                    <label for="to"></label>
+                    <div class="controls">
+                        <input type="text" placeholder="Email" name="email" class="shadow form-control" value="" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="subject"></label>
+                    <div class="controls">
+                        <input type="text" placeholder="Nom / Prénom" name="name" class="shadow form-control" value="" required/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message"></label>
+                        <textarea name="msg" placeholder="Message" class="shadow form-control" rows="10" cols="20" required></textarea>
+                </div>
+                <div class="container mt-5 mb-5 center">
+                    <hr />
+                    <input type="submit" class="btn btn-success mt-3 mb-5" value="Envoyer" name="btnContact" />
+                </div>
+            </form>
+{% endblock %} 

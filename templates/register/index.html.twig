@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container mt-5" id="form">
+    <div class="row">
+        <div class="col-12">
+            <h3 class="text-center">Inscription</h3>
+            <hr />
+            <p id="elem" class="text-center text-danger"></p>
+            <form action="" method="POST">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Adresse email</label>
+                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" required>
+                    <div class="elem orm-text text-danger"></div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Mot de passe</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                    <div class="elem form-text text-danger"></div>
+                </div>
+                <div class="mb-3 form-check">
+                    <small><a href="">Politique de confidentialité</a></small>
+                    <hr />
+                    <div class="check">
+                        <input type="checkbox" class="form-check-input checkbox" id="checkbox" value="1" required>
+                    </div>
+                    <label class="form-check-label" for="exampleCheck1">J'accepte</label>
+                </div>
+                <div class="text-center button">
+                <input type="button" class="btn btn-primary" name="btnRegister" value="S'inscrire">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block javascript %}
+<script src="dist/assets/js/register/register.js"></script>
+{% endblock %}

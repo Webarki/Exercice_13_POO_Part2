@@ -1,0 +1,21 @@
+body {
+    background-color: aqua;
+}
+
+.img {
+    max-width: 20%;
+    max-height: auto;
+}
+
+
+.label-file:hover {
+    color: #25a5c4;
+}
+
+.input-file {
+    display: none;
+}
+
+.fa-download {
+    font-size: 3em;
+}

@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+ {% block body %}
+    <h2 class="mb-3 mt-5">Bienvenue sur le bog du SJT</h2>
+    
+    {% if articles %}
+    {% for article in articles %}
+<div class="card text-center">
+  <div class="card-header">
+    # {{ article.id }}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">
+    {{ article.title }}
+    </h5>
+    <img src="{{ article.img }}" class="img" alt="">
+    <p class="card-text">{{ article.content|slice(0, 500) }} ...</p>
+    {% if session %}
+    <a href="article/view/{{ article.id }}" class="btn btn-primary">Consulter</a>
+    {% else %}
+    <a href="/public/register" class="btn btn-primary">S'inscrire</a>
+    {% endif %}
+  </div>
+  <div class="card-footer text-body-secondary">
+    {{ article.createdAt | date('d/m/Y') }}
+  </div>
+</div>
+<hr/>
+{% endfor %}
+{% else %}
+{% endif %}
+{% endblock %} 
